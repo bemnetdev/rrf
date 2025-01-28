@@ -21,8 +21,7 @@ db_host = os.getenv("DB_HOST")
 # Create the SQLAlchemy engine
 engine_url = f"postgresql+psycopg2://postgres:{db_password}@{db_host}/{database_name}"
 engine = create_engine(engine_url)
-
-engine = create_engine('postgresql+psycopg2://postgres:0910714752@localhost/RRF')
+st.write(engine)
 
 def detect_sheet(fpath):
     excel_file = pd.ExcelFile(fpath)
