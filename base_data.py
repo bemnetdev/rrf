@@ -84,3 +84,17 @@ an_cols_to_drop = [
     'Recommendation',
     'Maximum Stock Can be Received by this Batch'
 ]
+
+
+columns_to_print = [
+    'SHI Code',
+    'Item',
+    'Unit',
+    'Category',
+    'Beginning Balance',
+    'Received Quantity (B1)',
+    'Received Quantity (B2)',
+    'Loss_Adjustment',
+    'Ending Balance',
+    'Days Out of Stock (DOS)'
+]
