@@ -239,7 +239,7 @@ def nppl_clean(nppl_df, HF, SRP, ERP):
         nppl_df.insert(2, 'Ending Reporting Period', ERP)
         return nppl_df
     except:
-        st.error("Unable to clean the Analysis sheet data!", icon="❌")
+        st.error("Unable to clean the NPPL sheet data!", icon="❌")
 
 
 def nppl_table(fpath, NPPL, HF, SRP, ERP):
