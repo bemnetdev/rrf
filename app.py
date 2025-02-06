@@ -230,7 +230,7 @@ def nppl_clean(nppl_df, HF, SRP, ERP):
     try:
         remark_index = nppl_df.columns.get_loc("Quantity Requested")
         nppl_df = nppl_df.iloc[:, :remark_index + 1]
-        nppl_df = nppl_df.rename(columns={'Unnamed: 0': 'S.No'})
+        nppl_df = nppl_df.rename(columns={nppl_df.columns[0]: 'S.No'})
         nppl_df.set_index('S.No', inplace=True)
         nppl_df['Expiry Date'] = pd.to_datetime(nppl_df['Expiry Date']).dt.date
         st.write(pd.concat([nppl_df.head(), nppl_df.tail()]))
