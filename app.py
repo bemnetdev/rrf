@@ -198,7 +198,7 @@ def clean_analysis(analysis_df):
         analysis_clean = analysis_df.drop(columns=an_cols_to_drop)
         return analysis_clean
     except Exception as e:
-        st.error(f"Unable to clean the NPPL sheet data! Error: {str(e)}", icon="❌")
+        st.error(f"Unable to clean the Analysis sheet data! Error: {str(e)}", icon="❌")
 
 
 def analysis_table(fpath, Analysis):
@@ -257,8 +257,8 @@ def patient_clean(patient_df, HF, SRP, ERP):
         patient_df.insert(1, 'Start Reporting Period', SRP)
         patient_df.insert(2, 'Ending Reporting Period', ERP)
         return patient_df
-    except:
-        st.error("Unable to clean the Patient sheet data!", icon="❌")
+    except Exception as e:
+        st.error(f"Unable to clean the Patient sheet data! Error: {str(e)}", icon="❌")
 
 
 def patient_table(fpath, Patient_Data, HF, SRP, ERP):
