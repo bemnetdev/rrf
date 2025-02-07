@@ -127,8 +127,8 @@ def clean_data(df, new_columns, columns_to_drop, int_columns, HF, SRP, ERP):
         for col in int_columns:
             df_drop_3[col] = pd.to_numeric(df_drop_3[col], errors='coerce').fillna(0).astype(int)
         return df_drop_3
-    except:
-        st.error("Unable to clean the RRF table data!", icon="❌")
+    except Exception as e:
+        st.error(f"Unable to clean the RRF sheet data! Error: {str(e)}", icon="❌")
 
 
 def print_data(DFF):
