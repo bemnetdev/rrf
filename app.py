@@ -250,7 +250,7 @@ def nppl_table(fpath, NPPL, HF, SRP, ERP):
 
 def patient_clean(patient_df, HF, SRP, ERP):
     try:
-        patient_df = patient_df.drop(columns=["Unnamed: 0", "Notes"])
+        patient_df = patient_df.rename(columns={patient_df.columns[0]: 'S.No'})
         patient_df['Cancer Type'] = patient_df['Cancer Type'].fillna(method='ffill')
         st.write(pd.concat([patient_df.head(), patient_df.tail()]))
         patient_df.insert(0, 'Health_Facility', HF)
