@@ -197,8 +197,8 @@ def clean_analysis(analysis_df):
         analysis_df['Unit Price'] = pd.to_numeric(analysis_df['Unit Price'], errors='coerce')
         analysis_clean = analysis_df.drop(columns=an_cols_to_drop)
         return analysis_clean
-    except:
-        st.error("Unable to clean the Analysis sheet data! Please follow the guideline!", icon="❌")
+    except Exception as e:
+        st.error(f"Unable to clean the NPPL sheet data! Error: {str(e)}", icon="❌")
 
 
 def analysis_table(fpath, Analysis):
